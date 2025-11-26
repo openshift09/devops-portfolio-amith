@@ -1,0 +1,21 @@
+node:
+  replicaCount: 2
+  image: bkshivani/node-cicd-app
+  tag: latest
+  servicePort: 3000
+
+python:
+  replicaCount: 2
+  image: bkshivani/python-cicd-app
+  tag: latest
+  servicePort: 5000
+
+go:
+  replicaCount: 2
+  image: bkshivani/go-cicd-app
+  tag: latest
+  servicePort: 8080
+
+ingress:
+  enabled: true
+  host: localhost

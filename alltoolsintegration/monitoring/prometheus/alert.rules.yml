@@ -1,0 +1,20 @@
+groups:
+- name: app-alerts
+  rules:
+  - alert: AppDown
+    expr: up == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Application is down"
+groups:
+  - name: app_alerts
+    rules:
+      - alert: NodeAppDown
+        expr: up{job="node-app"} == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Node app is down"
