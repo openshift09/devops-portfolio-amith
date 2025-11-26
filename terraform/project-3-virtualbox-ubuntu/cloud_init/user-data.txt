@@ -1,0 +1,22 @@
+#cloud-config
+hostname: terraform-vm
+manage_etc_hosts: true
+
+users:
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: sudo
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-rsa AAAA...PUT_YOUR_PUBLIC_KEY_HERE...
+
+package_update: true
+package_upgrade: true
+
+packages:
+  - nginx
+
+runcmd:
+  - systemctl enable nginx
+  - systemctl start nginx
+  - echo "<h1>Terraform VirtualBox Automation Successful</h1>" > /var/www/html/index.html
