@@ -1,0 +1,8 @@
+===== LOG METRICS REPORT =====
+File: logs\app.log
+Generated: 2025-11-30 18:32:11.647409
+
+Total Lines: 5
+INFO Count: 2
+WARNING Count: 1
+ERROR Count: 2

@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-service
+spec:
+  selector:
+    app: node
+  ports:
+    - port: {{ .Values.node.servicePort }}
+      targetPort: {{ .Values.node.servicePort }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-service
+spec:
+  selector:
+    app: python
+  ports:
+    - port: {{ .Values.python.servicePort }}
+      targetPort: {{ .Values.python.servicePort }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-service
+spec:
+  selector:
+    app: go
+  ports:
+    - port: {{ .Values.go.servicePort }}
+      targetPort: {{ .Values.go.servicePort }}

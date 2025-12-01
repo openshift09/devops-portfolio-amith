@@ -1,0 +1,5 @@
+2025-02-18 10:01 INFO Starting application
+2025-02-18 10:02 WARNING High memory usage
+2025-02-18 10:03 ERROR Failed to connect database
+2025-02-18 10:04 INFO Retrying connection
+2025-02-18 10:05 ERROR Timeout while reading

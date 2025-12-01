@@ -1,0 +1,8 @@
+{
+    "APP_NAME": "inventory-service",
+    "APP_ENV": "dev",
+    "DB_HOST": "localhost",
+    "DB_USER": "admin",
+    "DB_PASS": "StrongPassword123",
+    "API_KEY": "XYZ-123-SECRET"
+}

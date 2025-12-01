@@ -1,0 +1,10 @@
+{
+    "name": "Amith",
+    "role": "DevOps",
+    "skills": [
+        "ansible",
+        "python",
+        "terraform"
+    ],
+    "active": true
+}

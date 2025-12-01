@@ -1,0 +1,13 @@
+{
+    "app": {
+        "name": "inventory-app",
+        "version": "2.0"
+    },
+    "database": {
+        "host": "localhost",
+        "port": 5432
+    },
+    "logging": {
+        "level": "debug"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "app": {
+        "name": "amit",
+        "environment": "dev",
+        "version": "3"
+    },
+    "database": {
+        "host": "re",
+        "username": "re",
+        "password": "re"
+    },
+    "generated_at": "2025-11-30 17:38:04.795873"
+}

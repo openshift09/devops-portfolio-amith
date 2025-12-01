@@ -1,0 +1,9 @@
+app:
+  environment: dev
+  name: amit
+  version: '3'
+database:
+  host: re
+  password: re
+  username: re
+generated_at: '2025-11-30 17:38:04.795873'

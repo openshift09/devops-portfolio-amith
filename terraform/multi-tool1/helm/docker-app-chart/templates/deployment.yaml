@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-deploy
+spec:
+  replicas: {{ .Values.node.replicaCount }}
+  selector:
+    matchLabels:
+      app: node
+  template:
+    metadata:
+      labels:
+        app: node
+    spec:
+      containers:
+      - name: node
+        image: {{ .Values.node.image }}:{{ .Values.node.tag }}
+        ports:
+        - containerPort: {{ .Values.node.servicePort }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-deploy
+spec:
+  replicas: {{ .Values.python.replicaCount }}
+  selector:
+    matchLabels:
+      app: python
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      containers:
+      - name: python
+        image: {{ .Values.python.image }}:{{ .Values.python.tag }}
+        ports:
+        - containerPort: {{ .Values.python.servicePort }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-deploy
+spec:
+  replicas: {{ .Values.go.replicaCount }}
+  selector:
+    matchLabels:
+      app: go
+  template:
+    metadata:
+      labels:
+        app: go
+    spec:
+      containers:
+      - name: go
+        image: {{ .Values.go.image }}:{{ .Values.go.tag }}
+        ports:
+        - containerPort: {{ .Values.go.servicePort }}

@@ -1,0 +1,30 @@
+===== SSH SIMULATION OUTPUT =====
+Generated: 2025-11-30 18:22:53.356017
+
+COMMAND: hostname
+RESULT:
+DESKTOP-APRM7EQ
+
+
+COMMAND: whoami
+RESULT:
+desktop-aprm7eq\amit
+
+
+COMMAND: dir
+RESULT:
+ Volume in drive C is win 11
+ Volume Serial Number is 9631-6E43
+
+ Directory of C:\Users\Amit\Desktop\Int_Prep\GITHUB_PROJECTS\devops-portfolio-amith\ssh-simulator
+
+30-11-2025  18:21    <DIR>          .
+30-11-2025  18:20    <DIR>          ..
+30-11-2025  18:22    <DIR>          commands
+30-11-2025  18:21    <DIR>          output
+30-11-2025  18:21                 0 README.md
+30-11-2025  18:22             1,223 ssh_run.py
+               2 File(s)          1,223 bytes
+               4 Dir(s)  55,468,474,368 bytes free
+
+

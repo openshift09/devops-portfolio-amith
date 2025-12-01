@@ -1,0 +1,21 @@
+===== DISK SPACE ANALYZER REPORT =====
+Generated: 2025-11-30 19:07:39.481941
+
+Drive: C:\
+Total Space: 194.7 GB
+Used Space: 143.1 GB
+Free Space: 51.6 GB
+Used (%): 73.5%
+
+Drive: D:\
+Total Space: 281.63 GB
+Used Space: 1.0 GB
+Free Space: 280.63 GB
+Used (%): 0.35%
+
+Drive: E:\
+Total Space: 243.53 GB
+Used Space: 154.74 GB
+Free Space: 88.79 GB
+Used (%): 63.54%
+

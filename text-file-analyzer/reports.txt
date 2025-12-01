@@ -1,0 +1,14 @@
+===== TEXT ANALYZER REPORT =====
+Analyzed file: sample.txt
+Generated: 2025-02-17 15:32:10
+
+Total Lines: 3
+Total Words: 15
+Total Characters: 84
+
+Top 5 Most Frequent Words:
+This: 2
+file: 2
+text: 1
+Hello: 1
+world: 1

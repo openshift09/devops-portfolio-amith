@@ -1,0 +1,42 @@
+- name: Manage Docker containers with Ansible
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+
+    - name: Create Docker network
+      community.docker.docker_network:
+        name: web_net
+
+    - name: Start first Nginx container
+      community.docker.docker_container:
+        name: nginx1
+        image: nginx:latest
+        networks:
+          - name: web_net
+        ports:
+          - "8081:80"
+        state: started
+
+    - name: Start second Nginx container
+      community.docker.docker_container:
+        name: nginx2
+        image: nginx:latest
+        networks:
+          - name: web_net
+        ports:
+          - "8082:80"
+        state: started
+
+    - name: Copy custom index.html into nginx1
+      community.docker.docker_container_exec:
+        container: nginx1
+        command: >
+          sh -c "echo 'Welcome from NGINX1 (managed by Ansible)' > /usr/share/nginx/html/index.html"
+
+    - name: Copy custom index.html into nginx2
+      community.docker.docker_container_exec:
+        container: nginx2
+        command: >
+          sh -c "echo 'Welcome from NGINX2 (managed by Ansible)' > /usr/share/nginx/html/index.html"

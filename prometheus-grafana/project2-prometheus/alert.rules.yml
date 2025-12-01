@@ -1,0 +1,20 @@
+groups:
+  - name: system-alerts
+    rules:
+      - alert: HighCPUUsage
+        expr: node_cpu_seconds_total{mode="idle"} < 20
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "CPU usage is above 80%"
+          description: "CPU has been high for more than 2 minutes"
+
+      - alert: HighMemoryUsage
+        expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes < 0.2
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Memory usage is above 80%"
+          description: "Memory has been high for more than 2 minutes"

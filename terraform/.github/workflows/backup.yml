@@ -1,0 +1,29 @@
+name: Automated Daily Backup
+
+on:
+  schedule:
+    - cron: "0 12 * * *"  # Runs every day at 12:00 noon (IST approx.)
+  workflow_dispatch:      # Allow manual trigger
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Create backup folder
+      run: mkdir backup
+
+    - name: Create compressed backup
+      run: zip -r backup/backup_${{ github.run_id }}.zip .
+
+    - name: Upload backup artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: daily-backup
+        path: backup/
+
+    - name: Show completion message
+      run: echo "Backup completed successfully!"

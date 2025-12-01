@@ -1,0 +1,5 @@
+User logged in with password=SuperSecret123
+API token: 9234abcd9234abcd
+DB_PASSWORD=mydbpass
+auth_key=ABCDEF1234567890
+normal log line

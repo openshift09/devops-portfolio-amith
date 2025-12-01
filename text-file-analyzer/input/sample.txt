@@ -1,0 +1,3 @@
+Hello world
+This is a simple test file
+This file is for testing the text analyzer script

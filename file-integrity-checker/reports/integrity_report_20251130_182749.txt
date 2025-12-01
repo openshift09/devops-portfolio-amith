@@ -1,0 +1,6 @@
+===== FILE INTEGRITY REPORT =====
+File: files\checker.py
+Generated: 2025-11-30 18:27:49.536032
+
+SHA256 Hash:
+949d97000af76a11cc33175d6f2f325c583a57e010e118632ebc4fcd46515fa7

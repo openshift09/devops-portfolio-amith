@@ -1,0 +1,5 @@
+apiVersion: v2
+name: docker-app-chart
+description: Multi-app Docker Kubernetes chart
+version: 0.1.0
+appVersion: "1.0"

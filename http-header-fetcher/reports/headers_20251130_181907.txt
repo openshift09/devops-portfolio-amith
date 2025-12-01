@@ -1,0 +1,17 @@
+===== HTTP HEADER REPORT =====
+URL: http://www.google.com
+Status Code: 200
+Generated: 2025-11-30 18:19:07.783756
+
+Date: Sun, 30 Nov 2025 12:49:09 GMT
+Expires: -1
+Cache-Control: private, max-age=0
+Content-Type: text/html; charset=ISO-8859-1
+Content-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-Ddm_P6s1GPu08uVKNiaMWg' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+P3P: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+Content-Encoding: gzip
+Server: gws
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: AEC=AaJma5uy8DrXfqVsrrS18KoMtIAvEPoMc2TTcWcJ2NNY_hG2kutCkuwhEBs; expires=Fri, 29-May-2026 12:49:09 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=526=NNoEkXq5QiP3ExQLBn_o-DTHY99715hk2FQVgQA_AyuLkD2ny2j8p3OdSWDqALmbK5oyLacjY6A8Pqu1nXN-wkhisvKfSg4puAB-00UAGrcXMfwOx6pbXIHHDI9AizhhopkAGIYhSK3WiDyebajN2odVejUrW-viyXkCtmfN3YzslS9j2p8xhR8uNHXvjOlyWxyQogBklidUxoMCDxv5nmULbuVzCKG7; expires=Mon, 01-Jun-2026 12:49:09 GMT; path=/; domain=.google.com; HttpOnly
+Transfer-Encoding: chunked

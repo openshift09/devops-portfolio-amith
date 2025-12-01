@@ -1,0 +1,4 @@
+==== YAML VALIDATION REPORT ====
+File: input\config.yaml
+Status: VALID
+Generated: 2025-11-30 17:42:00.603289

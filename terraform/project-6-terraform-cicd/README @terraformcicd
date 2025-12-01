@@ -1,0 +1,233 @@
+README.md — Terraform CI/CD Pipeline using Jenkins + Docker
+🚀 Terraform CI/CD Pipeline with Jenkins & Docker
+
+Automated Infrastructure Deployment using Terraform, Jenkins Pipeline & Docker
+
+This project demonstrates a full CI/CD pipeline using:
+
+Jenkins (CI/CD automation)
+
+Terraform (Infrastructure as Code)
+
+Docker (Application deployment)
+
+GitHub (Version control & triggers)
+
+This is a real DevOps workflow showcasing automation from code commit → pipeline execution → Terraform apply → Docker deployment.
+
+🏗️ Architecture Overview
+Developer → GitHub → Jenkins Pipeline → Terraform → Docker Engine → Web App
+
+
+Jenkins automatically:
+
+Pulls code from GitHub
+
+Runs Terraform (init → plan → apply)
+
+Deploys the Web App container
+
+Exposes application on localhost
+
+🧱 Project Structure
+terraform-cicd/
+│── docker-compose.yml     → Runs Jenkins + Terraform runner
+│── app/
+│     └── index.html       → Simple test application
+│── terraform/
+│     └── main.tf          → Terraform code to deploy container
+└── README.md              → Project documentation
+
+⚙️ Tools & Technologies
+Tool	Purpose
+Jenkins	CI/CD automation
+Terraform	Infrastructure as Code
+Docker Engine	Container runtime
+Docker Compose	Multi-container orchestration
+Nginx	App hosting
+GitHub	Version control
+🐳 Docker Setup
+
+This project uses the following containers:
+
+Jenkins Server
+
+Runs on: localhost:8080
+
+Auto-configured with Docker access
+
+Mounts Terraform code and workspace
+
+Terraform Runner
+
+Based on official Terraform Docker image.
+
+🧩 docker-compose.yml
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins-server
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./terraform:/terraform
+
+  terraform-runner:
+    image: hashicorp/terraform:1.6
+    container_name: terraform-runner
+    volumes:
+      - ./terraform:/workspace
+    working_dir: /workspace
+
+
+Start the environment:
+
+docker-compose up -d
+
+🌐 Application
+
+Simple HTML web app:
+
+app/index.html
+
+
+This file is copied into an Nginx container using Terraform.
+
+🌍 Terraform Infrastructure Code
+
+Terraform deploys:
+
+Docker image: nginx
+
+Docker container: webapp
+
+Volume mount: HTML file into container
+
+Application is exposed at:
+
+http://localhost:8085
+
+🤖 Jenkins Pipeline Script
+
+Pipeline performs:
+
+Git Checkout
+
+Terraform Init
+
+Terraform Plan
+
+Terraform Apply
+
+Add this in Jenkins → Pipeline → Script:
+
+pipeline {
+  agent any
+
+  stages {
+    stage('Checkout') {
+      steps {
+        git 'https://github.com/openshift09/devops-portfolio-amith.git'
+      }
+    }
+
+    stage('Init Terraform') {
+      steps {
+        sh 'terraform -chdir=terraform init'
+      }
+    }
+
+    stage('Plan Terraform') {
+      steps {
+        sh 'terraform -chdir=terraform plan'
+      }
+    }
+
+    stage('Apply Terraform') {
+      steps {
+        sh 'terraform -chdir=terraform apply -auto-approve'
+      }
+    }
+  }
+}
+
+🚨 How CI/CD Works
+
+Developer commits a change (HTML, Terraform, Jenkinsfile, etc.)
+
+GitHub updates repo
+
+Jenkins auto-pulls new changes
+
+Jenkins triggers Terraform
+
+Terraform deploys infrastructure
+
+App is reachable on browser
+
+🎯 Key DevOps Skills Demonstrated
+
+✔ CI/CD Pipeline creation
+✔ Terraform automation
+✔ Docker container orchestration
+✔ Jenkins pipeline scripting
+✔ Infrastructure as Code best practices
+✔ GitHub integration
+✔ Reusable IaC project structure
+
+Perfect for showcasing in a DevOps interview.
+
+📸 (Optional) Add Screenshots
+
+You can include pictures such as:
+
+Jenkins dashboard
+
+Successful Terraform Apply
+
+Running Docker container
+
+Web App in browser
+
+🚀 Run the Project
+1. Start Jenkins + Terraform
+docker-compose up -d
+
+2. Access Jenkins:
+
+http://localhost:8080
+
+3. Run the Pipeline
+
+Click:
+Build Now
+
+4. App URL
+http://localhost:8085
+
+📦 Cleanup
+
+To stop all containers:
+
+docker-compose down
+
+
+To destroy infrastructure:
+
+terraform -chdir=terraform destroy
+
+🏁 Project Complete
+
+You now have a full, production-grade:
+
+CI/CD pipeline
+
+using Jenkins
+
+running Terraform
+
+provisioning Docker-based infrastructure

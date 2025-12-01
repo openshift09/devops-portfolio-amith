@@ -1,0 +1,10 @@
+===== SYSTEM INFORMATION REPORT =====
+Generated: 11/30/2025 18:13:17
+
+Hostname:          DESKTOP-APRM7EQ
+Logged-in User:    Amit
+Operating System:  Windows 10 Home Single Language
+OS Build Number:   26100
+CPU Model:         Intel(R) Core(TM) i3-7100U CPU @ 2.40GHz
+Total RAM:         15.87 GB
+IP Address:        172.29.208.1 192.168.56.1 192.168.241.1 192.168.111.1 192.168.1.36 127.0.0.1
