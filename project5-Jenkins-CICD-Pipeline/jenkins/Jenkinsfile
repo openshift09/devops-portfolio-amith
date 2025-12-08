@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    emvironment {
+        REGISTRY = "docker.io/openshift09"
+        IMAGE = "demo-app"
+        TAG = "v1" 
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Install Dependencies') 
+           {
+            steps {
+                sh 'cd app && npm install'
+            }
+           } 
+        stage('Run Tests') {
+            steps {
+                sh 'sh jenkins/test/sh'
+
+            }
+        
+        
+        
+        }
+    }
+        stage('Build DockerImage') {
+            steps {
+                sh 'sh jenkins/build.sh'
+            }
+        }
+        stage('Push Image to Registry') {
+            steps {
+                sh ' ' '
+                docker login -u $DOCKER_USER -p $DOCKER_PASS
+                docker push $REGISTRY/$IMAGE:$TAG
+                '''
+            }
+        } 
+        stage('Deploy to Openshift') {
+            steps {
+                sh 'sh jenkins/deploy.sh'
+            }
+        }
+    } 
+}

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: configMap
+metadata:
+  name: app-configMap
+data:
+  APP_PORT: "3000"
+  

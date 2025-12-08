@@ -1,0 +1,7 @@
+LOG ANALYSIS REPORT
+------------------
+INFO Count: 0
+WARNING Count: 0
+ERROR Count: 0
+
+ERROR DETAILS:

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+      -  name: demo-app
+         image: demo-app:latest
+         ports:
+         -  containerPort: 3000
+         envFrom:
+         -  configMapRef
+               name: app-configMapRef
+          livenessProbe:
+            httpGet:
+               path: /
+               port: 3000
+            initialDelaySeconds: 5
+          readinessProbe:
+            httpGet:
+               path: /
+               port: 3000
+            initialDelaySeconds: 5       

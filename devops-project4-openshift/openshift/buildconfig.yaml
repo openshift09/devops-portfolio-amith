@@ -1,0 +1,15 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: demo-app-build
+spec:
+  source:
+     type: Git
+     git: 
+       url: "https:/github.com/demo-app.git"
+  strategy:
+     type: Docker
+  output:
+    to:
+      kind: ImageStreamTag
+      name: demo-app:latest

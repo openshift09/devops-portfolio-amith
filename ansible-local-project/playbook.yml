@@ -1,0 +1,38 @@
+
+- name: Ansible Local Anutocompletion Project
+  hosts: local
+  become: no
+  
+  vars:
+    project_name: "Ansible Local Project"
+    env: "deployment"
+
+  tasks:
+
+    -  name: Create a Directory
+       file:
+        path: ./output
+        state: directory
+    - name: Copy Html File    
+      copy:
+        src: files/index.Html
+        dest:  ./output/index.Html
+
+    - name: Create a configuration file from template
+      template:
+        src: templates/config.j2
+        dest: ./output/config.cfg
+   
+    - name: Create a text file using the copy module
+      copy:
+        content: "This file was created by ANsible!" 
+        dest:  ./output/info.txt
+    
+    - name: Simulate package installation (WIndows safe)
+      debug:
+        msg: "Pretend to install package: nginx"
+           
+    - name: Simulate service start
+      debug:
+        msg: "Pretend to start service:nginx"
+
