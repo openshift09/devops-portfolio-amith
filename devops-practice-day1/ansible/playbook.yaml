@@ -1,0 +1,19 @@
+- name: Install and configure nginx
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: present
+
+  - name: Copy index.html
+    copy:
+       dest: /var/www/html/index.html
+       content: "Hello from Ansible"
+
+  - name: Start nginx
+    service:
+       name: nginx
+       state: started     
